@@ -1,6 +1,6 @@
 # Advanced Angular Development
 
-Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse auf den Enterprise Level und besprechen folgende Themen in der Tiefe:
+Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse auf den Experten Level und besprechen folgende Themen in der Tiefe:
 
 ## Themen
 
@@ -175,7 +175,7 @@ Kenntnisse im Umgang mit Git
 - Node Express Introduction
 - Konfigure SSR
 
-## Advanced Hosting & Angular CI / CD (Docker & Kubernetes)
+## Advanced Hosting & Angular CI / CD
 
 - Deployment Overview & Hosting Options
 - Blob Storages & URL Rewriting
