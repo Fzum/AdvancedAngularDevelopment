@@ -1,0 +1,26 @@
+version: "2.1"
+
+services:
+  skillsapi:
+    # image: skillsapi
+    build:
+      context: .
+      dockerfile: docker.prod.dockerfile
+    ports:
+      - 8080:5000
+    networks:
+      - skills-network
+    depends_on:
+      - sqllinux
+  sqllinux:
+    image: microsoft/mssql-server-linux
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "TiTp4SQL@dmin"
+    networks:
+      - skills-network
+networks:
+  skills-network:
+    driver: bridge

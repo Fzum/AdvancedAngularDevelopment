@@ -1,0 +1,22 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "hello": {
+      "description": "A blank schematic.",
+      "factory": "./hello/index#hello"
+    },
+    "helloparam": {
+      "description": "A blank schematic.",
+      "factory": "./helloparam/index#helloparam"
+    },
+    "hello-component": {
+      "description": "A blank schematic.",
+      "factory": "./hello-component/index#helloComponent"
+    },
+    "hellocli": {
+      "description": "A blank schematic.",
+      "factory": "./hellocli/index#hellocli",
+      "schema": "./hello/schema.json"
+    }
+  }
+}

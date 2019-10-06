@@ -1,0 +1,31 @@
+version: "2.1"
+
+services:
+  skillsui:
+    image: skillsui
+    ports:
+      - 8085:80
+    networks:
+      - skills-network
+    depends_on:
+      - skillsapi
+  skillsapi:
+    image: skillsapi
+    ports:
+      - 8080:5000
+    networks:
+      - skills-network
+    depends_on:
+      - sqllinux
+  sqllinux:
+    image: microsoft/mssql-server-linux
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "TiTp4SQL@dmin"
+    networks:
+      - skills-network
+networks:
+  skills-network:
+    driver: bridge

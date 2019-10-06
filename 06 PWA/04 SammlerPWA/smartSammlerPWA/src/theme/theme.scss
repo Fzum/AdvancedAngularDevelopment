@@ -1,0 +1,48 @@
+//Provides Theme funcitonality
+@import "~@angular/material/theming";
+@import "stylevars.scss";
+
+//Mixin for common styles
+@include mat-core();
+
+//Pick colors here: https://material.io/color/
+$app-primary: mat-palette($mat-brown, 600);
+$app-accent: mat-palette($mat-green, 400);
+$app-warn: mat-palette($mat-red);
+$app-bg: mat-palette($mat-grey, 200);
+$app-fg: mat-palette($mat-grey, 50);
+
+//Build theme
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+//Include theme
+@include angular-material-theme($app-theme);
+
+.mat-card {
+  background-color: mat-color($app-bg);
+  margin-bottom: $big-gap;
+  padding: 0 !important;
+}
+
+.mat-card-header {
+  background-color: mat-color($app-bg);
+  min-height: $barHeight;
+  padding-top: $small-gap;
+}
+
+.mat-card-content {
+  padding: $medium-gap;
+  background-color: mat-color($app-bg);
+  margin-bottom: 0 !important;
+}
+
+.mat-card-actions {
+  padding: $medium-gap;
+  margin-left: $medium-gap !important;
+  margin-right: $medium-gap !important;
+  padding-bottom: $medium-gap !important;
+  button {
+    background-color: mat-color($app-bg, 700);
+    color: mat-color($app-fg);
+  }
+}

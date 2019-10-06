@@ -1,0 +1,28 @@
+﻿using System;
+using System.Linq;
+
+namespace SkillsApi {
+    public static class DBInitializer {
+        public static void Initialize (SkillDBContext context) {
+            context.Database.EnsureCreated ();
+
+            if (context.Topics.FirstOrDefault () == null) {
+
+                var t1 = new Topic { id = 1, title = "Theming" };
+                var t2 = new Topic { id = 2, title = "RxJS" };
+
+                context.Topics.AddRange (t1, t2);
+
+                var sk1 = new Skill { title = "Custom Theme", completed = true, hours = 4, duedate = DateTime.Now.AddMonths (-1), topicId = t1.id };
+                var sk2 = new Skill { title = "Theme Mixins", completed = false, hours = 3, duedate = DateTime.Now.AddMonths (-2), topicId = t1.id };
+                var sk3 = new Skill { title = "Light & Dark Theme", completed = false, hours = 2, duedate = DateTime.Now.AddMonths (2), topicId = t1.id };
+                var sk4 = new Skill { title = "RxJS Operators", completed = true, hours = 5, duedate = DateTime.Now.AddDays (2), topicId = t2.id };
+                var sk5 = new Skill { title = "Custom Operators", completed = false, hours = 1, duedate = DateTime.Now.AddYears (1), topicId = t2.id };
+
+                context.Skills.AddRange (sk1, sk2, sk3, sk4, sk5);
+
+                context.SaveChanges ();
+            }
+        }
+    }
+}

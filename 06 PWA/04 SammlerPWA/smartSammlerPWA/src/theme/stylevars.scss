@@ -1,0 +1,22 @@
+$barHeight: 4vh;
+$mainHeight: 90vh;
+
+// Gaps
+$small-gap: 0.5rem;
+$medium-gap: 0.8rem;
+$big-gap: 1rem;
+
+@mixin sidePadding {
+  padding-left: $medium-gap;
+  padding-right: $medium-gap;
+}
+
+@mixin topPadding {
+  padding-top: $medium-gap;
+}
+
+@mixin bar {
+  height: $barHeight;
+  min-height: 60px !important;
+  color: primary;
+}

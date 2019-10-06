@@ -1,0 +1,17 @@
+@import "stylevars";
+
+.mainContainer {
+  height: $mainHeight;
+}
+
+.main {
+  min-width: 300px;
+  @include sidePadding;
+  @include topPadding;
+}
+
+.sidebar {
+  min-width: 300px;
+  @include sidePadding;
+  @include topPadding;
+}

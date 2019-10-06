@@ -1,0 +1,36 @@
+@import "stylevars.scss";
+@import "theme.scss";
+
+agm-map {
+  height: 250px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+textarea {
+  border-style: dotted;
+  border-width: 1px;
+  border-color: mat-color($app-primary);
+}
+
+mat-card {
+  margin-bottom: 0.3rem;
+}
+
+.imgMain {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.leftCell {
+  text-align: left;
+}
+
+.rightCell {
+  text-align: right;
+  margin-right: 20px;
+}
