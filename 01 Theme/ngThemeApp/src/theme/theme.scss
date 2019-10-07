@@ -23,18 +23,6 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   @include angular-material-theme($dark-theme);
 }
 
-//Note: Toolbar Component Mixin
-
-@mixin toolbar-theme($theme) {
-  $accent: map-get($theme, accent);
-
-  .mat-toolbar {
-    background-color: mat-color($accent, 400);
-  }
-}
-
-@include toolbar-theme($app-theme);
-
 //Note: Custom Component Mixin: Content Projection
 @mixin ux-spilt-theme($theme) {
   $primary: map-get($theme, primary);
