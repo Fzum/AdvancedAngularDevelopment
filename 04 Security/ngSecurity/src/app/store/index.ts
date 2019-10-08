@@ -10,6 +10,7 @@ export interface State {
   app: AppState;
   routerReducer: RouterReducerState<RouterStateUrl>;
   auth: AuthState;
+  // demos: DemoState  -> Lazy Loaded
 }
 
 export const reducers: ActionReducerMap<State> = {
