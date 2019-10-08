@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "FirstAngular"
+  "defaultProject": "FirstAngular",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
