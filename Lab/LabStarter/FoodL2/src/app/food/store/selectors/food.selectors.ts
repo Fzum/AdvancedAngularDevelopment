@@ -18,3 +18,8 @@ export const getAllFood = createSelector(
     return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
   }
 );
+
+export const getSelected = createSelector(
+  getFoodState,
+  state => state.selected
+);

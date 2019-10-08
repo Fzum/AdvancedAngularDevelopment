@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FoodItem } from '../food.model';
 import { FoodState } from '../store/reducers/food.reducer';
 import { Store } from '@ngrx/store';
-import { LoadFoods } from '../store/actions/food.actions';
+import { LoadFoods, SelectFood } from '../store/actions/food.actions';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { getAllFood } from '../store/selectors/food.selectors';
+import { getAllFood, getSelected } from '../store/selectors/food.selectors';
 
 @Component({
   selector: 'app-food-container',
@@ -19,14 +19,14 @@ export class FoodContainerComponent implements OnInit {
     .select(getAllFood)
     .pipe(tap(data => console.log('data received from store', data)));
 
-  selected: FoodItem;
+  selected$: Observable<FoodItem> = this.store.select(getSelected);
 
   ngOnInit() {
     this.store.dispatch(new LoadFoods());
   }
 
   selectFood(f: FoodItem) {
-    // this.selected = { ...f };
+    this.store.dispatch(new SelectFood(f));
   }
 
   deleteFood(f: FoodItem) {

@@ -37,6 +37,9 @@ export function FoodReducer(
     case FoodActionTypes.LoadFoods_Error: {
       return { ...state };
     }
+    case FoodActionTypes.SelectFood: {
+      return { ...state, selected: action.payload };
+    }
     default:
       return state;
   }
