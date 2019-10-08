@@ -212,15 +212,48 @@ export function FoodReducer(
 }
 ```
 
+Create Selectios in `..food/store/selectors/food.selectors.ts`:
+
+```typescript
+import {
+  foodFeatureKey,
+  foodAdapter,
+  FoodState
+} from '../reducers/food.reducer';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+export const getFoodState = createFeatureSelector<FoodState>(foodFeatureKey);
+
+export const getFoodEntities = createSelector(
+  getFoodState,
+  foodAdapter.getSelectors().selectAll
+);
+
+export const getAllFood = createSelector(
+  getFoodEntities,
+  entities => {
+    return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
+  }
+);
+```
+
 Modifiy `food-container.component.ts`:
 
 ```typescript
+import { LoadFoods } from '../store/actions/food.actions';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { getAllFood } from '../store/selectors/food.selectors';
+
+@Component({
+  selector: 'app-food-container',
+  templateUrl: './food-container.component.html',
+  styleUrls: ['./food-container.component.scss']
+})
 export class FoodContainerComponent implements OnInit {
   constructor(private store: Store<FoodState>) {}
 
-  selected: FoodItem;
-
-  ngOnInit() {
-    this.store.dispatch(new LoadFoods());
-  }
+  food$: Observable<Array<FoodItem>> = this.store
+    .select(getAllFood)
+    .pipe(tap(data => console.log('data received from store', data)));
 ```
