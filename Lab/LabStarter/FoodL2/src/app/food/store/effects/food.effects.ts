@@ -17,7 +17,7 @@ export class FoodEffects {
     mergeMap(action =>
       this.fs.getFood().pipe(
         map((food: FoodItem[]) => new foodActions.LoadFood_Success(food)),
-        catchError(err => of(new foodActions.LoadSkills_Error(err)))
+        catchError(err => of(new foodActions.LoadFood_Error(err)))
       )
     )
   );

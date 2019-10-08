@@ -16,9 +16,9 @@ export class LoadFood_Success implements Action {
   constructor(public payload: FoodItem[]) {}
 }
 
-export class LoadSkills_Error implements Action {
+export class LoadFood_Error implements Action {
   readonly type = FoodActionTypes.LoadFoods_Error;
   constructor(public payload: Error) {}
 }
 
-export type FoodActions = LoadFoods | LoadFood_Success | LoadSkills_Error;
+export type FoodActions = LoadFoods | LoadFood_Success | LoadFood_Error;

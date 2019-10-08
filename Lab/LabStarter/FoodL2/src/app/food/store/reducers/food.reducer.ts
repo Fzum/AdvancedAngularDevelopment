@@ -5,7 +5,9 @@ import { FoodActions, FoodActionTypes } from '../actions/food.actions';
 
 export const foodFeatureKey = 'food';
 
-export interface FoodState extends EntityState<FoodItem> {}
+export interface FoodState extends EntityState<FoodItem> {
+  selected: FoodItem;
+}
 
 export const foodAdapter: EntityAdapter<FoodItem> = createEntityAdapter<
   FoodItem
@@ -13,7 +15,8 @@ export const foodAdapter: EntityAdapter<FoodItem> = createEntityAdapter<
 
 export const defaultFoodState: FoodState = {
   ids: [],
-  entities: {}
+  entities: {},
+  selected: null
 };
 
 export const initialState = foodAdapter.getInitialState(defaultFoodState);

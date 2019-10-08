@@ -137,12 +137,12 @@ export class LoadFood_Success implements Action {
   constructor(public payload: FoodItem[]) {}
 }
 
-export class LoadSkills_Error implements Action {
+export class LoadFood_Error implements Action {
   readonly type = FoodActionTypes.LoadFoods_Error;
   constructor(public payload: Error) {}
 }
 
-export type FoodActions = LoadFoods | LoadFood_Success | LoadSkills_Error;
+export type FoodActions = LoadFoods | LoadFood_Success | LoadFood_Error;
 ```
 
 Modify Food Effects:
@@ -167,7 +167,7 @@ export class FoodEffects {
     mergeMap(action =>
       this.fs.getFood().pipe(
         map((food: FoodItem[]) => new foodActions.LoadFood_Success(food)),
-        catchError(err => of(new foodActions.LoadSkills_Error(err)))
+        catchError(err => of(new foodActions.LoadFood_Error(err)))
       )
     )
   );
