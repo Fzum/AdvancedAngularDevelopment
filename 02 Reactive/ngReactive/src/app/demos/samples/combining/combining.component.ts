@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   combineLatest,
   forkJoin,
@@ -8,16 +8,16 @@ import {
   interval,
   of,
   zip
-} from "rxjs";
-import { map, pluck, tap, zip as depzip } from "rxjs/operators";
-import { AccountService } from "../account.service";
-import { DoublerService } from "../operators/doubler.service";
-import { VouchersService } from "../voucher.service";
+} from 'rxjs';
+import { map, pluck, tap, zip as depzip } from 'rxjs/operators';
+import { AccountService } from '../account.service';
+import { DoublerService } from '../operators/doubler.service';
+import { VouchersService } from '../voucher.service';
 
 @Component({
-  selector: "app-combining",
-  templateUrl: "./combining.component.html",
-  styleUrls: ["./combining.component.scss"]
+  selector: 'app-combining',
+  templateUrl: './combining.component.html',
+  styleUrls: ['./combining.component.scss']
 })
 export class CombiningComponent implements OnInit {
   constructor(
@@ -30,23 +30,23 @@ export class CombiningComponent implements OnInit {
 
   useConcat() {
     let sourceA$ = from([1, 2, 3, 4, 5]).pipe(depzip(interval(500), a => a));
-    let sourceB$ = from(["a", "b", "c"]).pipe(depzip(interval(400), a => a));
+    let sourceB$ = from(['a', 'b', 'c']).pipe(depzip(interval(400), a => a));
 
-    console.log("concat");
-    merge(sourceA$, sourceB$).subscribe(console.log);
+    console.log('concat');
+    concat(sourceA$, sourceB$).subscribe(console.log);
   }
 
   useMerge() {
     let sourceA$ = from([1, 2, 3, 4, 5]).pipe(depzip(interval(500), a => a));
-    let sourceB$ = from(["a", "b", "c"]).pipe(depzip(interval(400), a => a));
+    let sourceB$ = from(['a', 'b', 'c']).pipe(depzip(interval(400), a => a));
 
-    console.log("merge");
+    console.log('merge');
     merge(sourceA$, sourceB$).subscribe(console.log);
   }
 
   useZip() {
     let age$ = of<number>(27, 25, 29);
-    let name$ = of<string>("Sepp", "Mark", "Susi");
+    let name$ = of<string>('Sepp', 'Mark', 'Susi');
     let isDev$ = of<boolean>(true, true, false);
 
     zip(age$, name$, isDev$)
@@ -60,15 +60,15 @@ export class CombiningComponent implements OnInit {
     let response3 = this.ds.double(2);
 
     forkJoin([response1, response2, response3]).subscribe(arr => {
-      console.log("forkJoin", arr);
+      console.log('forkJoin', arr);
     });
   }
 
   leftJoin() {
     //get only the details for the vouchers
     let details$ = this.vs.getVoucher(2).pipe(
-      pluck("Details"),
-      tap(d => console.log("Details before combining", d))
+      pluck('Details'),
+      tap(d => console.log('Details before combining', d))
     );
 
     let accounts$ = this.as.getAccounts();
@@ -82,6 +82,6 @@ export class CombiningComponent implements OnInit {
           }))
         )
       )
-      .subscribe(d => console.log("Details after combining", d));
+      .subscribe(d => console.log('Details after combining', d));
   }
 }
