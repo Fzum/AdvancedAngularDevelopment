@@ -11,3 +11,10 @@ export const getFoodEntities = createSelector(
   getFoodState,
   foodAdapter.getSelectors().selectAll
 );
+
+export const getAllFood = createSelector(
+  getFoodEntities,
+  entities => {
+    return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
+  }
+);
