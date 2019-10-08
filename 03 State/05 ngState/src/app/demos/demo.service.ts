@@ -24,6 +24,12 @@ export class DemoService {
   }
 
   delete(item: DemoItem) {
-    return this.httpClient.delete(`${environment.apiUrl}demos/${item.id}`);
+    this.arrDemos = this.arrDemos.filter(d => d.id != item.id);
+    this.demos.next(this.arrDemos);
+  }
+
+  insert(item: DemoItem) {
+    this.arrDemos.push(item);
+    this.demos.next(this.arrDemos);
   }
 }
