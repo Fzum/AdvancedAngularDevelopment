@@ -16,7 +16,7 @@
 Installation:
 
 ```
-npm i @ngrx/store @ngrx/effects @ngrx/enitity -S
+npm i @ngrx/store @ngrx/effects @ngrx/entity -S
 npm i @ngrx/store-devtools -D
 ng add @ngrx/schematics
 ```
