@@ -214,7 +214,7 @@ export function FoodReducer(
 
 Modifiy `food-container.component.ts`:
 
-```
+```typescript
 export class FoodContainerComponent implements OnInit {
   constructor(private store: Store<FoodState>) {}
 
