@@ -13,7 +13,7 @@ Enable Self Signed Cert Trust in Chrome: `chrome://flags/#allow-insecure-localho
 Create a certifcate for Angular: Go to `.\create-certs`. Execute:
 
 ```
-bash generate.sh
+bash ./generate.sh
 ```
 
 > Bash is available on Windows Machines if you have installed [Git Bash](https://git-scm.com/downloads)

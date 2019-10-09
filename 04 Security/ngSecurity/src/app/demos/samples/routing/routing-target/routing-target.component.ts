@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterReducerState } from '@ngrx/router-store';
 import { Store } from '@ngrx/store';
 import { getRouterInfo } from 'src/app/store/selectors/router.selectors';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-routing-target',
@@ -11,9 +12,7 @@ import { getRouterInfo } from 'src/app/store/selectors/router.selectors';
 export class RoutingTargetComponent implements OnInit {
   constructor(private store: Store<RouterReducerState>) {}
 
-  routerState$ = this.store.select(getRouterInfo);
+  routerState$ = this.store.select(getRouterInfo).pipe(tap(console.log));
 
-  ngOnInit() {
-    this.store.select(getRouterInfo).subscribe(console.log);
-  }
+  ngOnInit() {}
 }

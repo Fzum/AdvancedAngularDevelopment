@@ -39,10 +39,6 @@ export function AuthReducer(
       //add your code
       return { ...state, isLoggedIn: true, user: action.payload };
     }
-    case AuthActionTypes.LoginErr: {
-      //add your code
-      return { ...state, isLoggedIn: false, user: null, token: null };
-    }
     case AuthActionTypes.LogoutComplete: {
       //add your code
       return { ...state, isLoggedIn: false, user: null, token: null };
