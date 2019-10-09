@@ -6,8 +6,15 @@
 
 ## Deploy to Firebase
 
+Install Tools:
+
 ```
-npm i -g firebase-tools
+npm install -g firebase-tools
+```
+
+Deploy:
+
+```
 firebase login
 firebase init
 firebase deploy

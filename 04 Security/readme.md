@@ -45,25 +45,6 @@ chrome://flags/#allow-insecure-localhost
 
 [Firebase](https://firebase.google.com/)
 
-Install Tools:
-
-```
-npm install -g firebase-tools
-```
-
-Login:
-
-```
-firebase login
-```
-
-Init Project & Deploy:
-
-```
-firebase init
-firebase deploy
-```
-
 #### Azure
 
 [Azure Trial](https://azure.microsoft.com/en-us/free/)
