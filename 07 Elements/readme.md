@@ -113,7 +113,7 @@ If you want to create `ONE SINGLE FILE` you can use an older approach to concat 
 
 Install `npm install --save-dev concat fs-extra`
 
-Add elements-build.js to root folder
+Add `elements-build.js` to root folder
 
 ```javascript
 const fs = require('fs-extra');
