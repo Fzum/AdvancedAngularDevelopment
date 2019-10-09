@@ -102,7 +102,7 @@ To handle events raised from your web component use this patter in a custom.js
 
 ```javascript
 document.addEventListener('DOMContentLoaded', function(event) {
-  var el = document.querySelector('#ngskills');
+  var el = document.querySelector('#ngxekills');
   el.addEventListener('onSaveSkills', data =>
     console.log('Logging Save from host', data.detail)
   );
