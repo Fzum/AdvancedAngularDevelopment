@@ -2,19 +2,46 @@
 
 ## Angular Libraries
 
+[Angular Library Docs](https://angular.io/guide/libraries)
+
+### Getting Started
+
 Create Library:
 
 ```
-ng generate library my-lib
+ng generate library ng-ui-controls
 ```
+
+Implement a Navbar:
+
+Navigate to the folder of your lib, execute
+
+```
+ng g c COMPONENTNAME
+```
+
+Implement your component, service, ....
 
 Build Library:
 
 ```
-ng build my-lib
+ng build --project ng-ui-controls
 ```
 
-[Angular Library Docs](https://angular.io/guide/libraries)
+To use the Component import it in `app.module.ts` of you Main Project
+
+import { NgUiControlsModule } from 'ng-ui-controls';
+
+```typescript
+@NgModule({
+  ...
+  imports: [BrowserModule, NgUiControlsModule],
+  ...
+})
+export class AppModule {}
+```
+
+Add it to `app.component.ts` and run your Main Project
 
 ### Publish to NPM
 
