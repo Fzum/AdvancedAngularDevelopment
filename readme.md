@@ -10,14 +10,13 @@ Im Seminar "Advanced Angular Development" bringen wir Ihre Angular Kenntnisse au
 - Reactive Forms in Depth
 - Securing Angular using OpenID Connect & NgRx
 - Advanced Testing - Jest & Cypress
-- Accessing Device Specific Features
-- Progressive Web Apps (PWA)
 - Reusability using Angular Libraries & NX
 - Scaffolding & Automation using Angular Schematics
 - Implementing Web Components using Angular Elements
 - Optimizing & Building Applications using Ivy & Bazel
+- Progressive Web Apps
 - Server Side Rendering using Angular Universal
-- Advanced Hosting & Angular CI / CD (Docker & Kubernetes)
+- Advanced Angular Publishing & Hosting (Docker & Kubernetes)
 
 ## Zielgruppe
 
@@ -53,9 +52,9 @@ Kenntnisse im Umgang mit Git
 ## Building an Reusable Angular Material Theme
 
 - Material Theming Overview
-- Define Primary, Accent and Warning Colors
 - Building a Reusable Material Theme
-- Define Alternative Themes
+- Define Primary, Accent and Warning Colors
+- Define Alternative Themes, Light & Dark Themes
 - Use Fore- and Backcolor
 - Use Theme Mixins
 - Theming Custom Components
@@ -116,32 +115,11 @@ Kenntnisse im Umgang mit Git
 - Using Jest for Unit Testing
 - End-2-End Testing using Cypress
 
-## Accessing Device Specific Features
-
-- Device Access Options & Overview
-- Using HTML APIs
-- Using Device Access Frameworks (Cordova, Capacitor)
-
-## Progressive Web Apps (PWA)
-
-- What are Progressive Web Apps
-- Frameworks & Tools
-- Features & Limitations on Platforms (Windows, iOS, Android)
-- Building Progressive Web Apps using Angular
-- Emulator Setup & Remote Debugging on mobile Devices
-- Understanding and Configuring Service Workers & Manifests
-- Debugging Service Workers
-- Automatic Installation Screens
-- Implementing Push Notifications
-- Updating PWA's
-
 ## Reusability using Angular Libraries
 
-- Angular Building Blocks
+- Angular Building Blocks: Workspace, Apps, Libraries
 - Sharing Code between Projects using Angular Libraries
-- Implementing and Using Libraries
-- Code-Refactoring to enable Libraries for existing Code
-- Publish Libraries to NPM
+- Implementing, Using & Publishing Libraries
 - Monorepos Overview
 - Introduction to nrwl NX
 
@@ -159,13 +137,21 @@ Kenntnisse im Umgang mit Git
 - Creating reusable Web Components using Angular Elements
 - Addressing Browser Compatibility Issues
 
+## Progressive Web Apps (PWA)
+
+- What are Progressive Web Apps
+- Understanding and Configuring Service Workers & Manifests
+- Automatic Installation Screens
+- Implementing Push Notifications
+- Updating PWA's
+
 ## Building & Optimizing Applications
 
+- Analyzing and Optimizing Bundles & Modules
+- Optimizing Change Detection
 - Using Chrome Dev Tools for Performance Optimization
 - Web Workers
-- Analyzing and Optimizing Bundles & Modules
 - Understanding Ivy and what it means for Performance Optimization
-- Builders Api
 - Introduction to the Bazel Build System
 
 ## Server Side Rendering (SSR) using Angular Universal
@@ -182,5 +168,5 @@ Kenntnisse im Umgang mit Git
 - Preparations for Angular Production Build
 - Docker & Kubernetes Introduction
 - Building an Angular Multi-Stage Docker Image
-- Implementing a 2-Tier Application (UI / API) using Docker-Compose
+- Implementing a 3-Tier Application (UI / API) using Docker-Compose
 - Continuous Integration / Continous Deployment (CI/CD)

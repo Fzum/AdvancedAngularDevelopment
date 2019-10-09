@@ -1,13 +1,16 @@
-import { ActionReducerMap, MetaReducer } from "@ngrx/store";
-import * as fromSkills from "src/app/skills/store/reducers/skill.reducer";
-import { environment } from "src/environments/environment.prod";
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
+import { environment } from 'src/environments/environment.prod';
+import {
+  SkillsState,
+  SkillReducer
+} from 'src/app/skills/store/reducers/skill.reducer';
 
 export interface AppState {
-  skills: fromSkills.SkillsState;
+  skills: SkillsState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  skills: fromSkills.SkillReducer
+  skills: SkillReducer
 };
 
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
