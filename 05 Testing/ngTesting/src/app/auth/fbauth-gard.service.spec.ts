@@ -31,12 +31,12 @@ describe('Auth Guard', () => {
   });
 
   it('should return true if the user state is logged in', () => {
-    // store.setState({
-    //   user: {},
-    //   token: null,
-    //   isLoggedIn: false
-    // });
-    // const expected = cold('(a|)', { a: true });
-    // expect(guard.canLoad()).toBeObservable(expected);
+    store.setState({
+      user: {},
+      token: null,
+      isLoggedIn: false
+    });
+    const expected = cold('(a|)', { a: true });
+    expect(guard.canLoad()).toBeObservable(expected);
   });
 });
