@@ -102,7 +102,7 @@ To handle events raised from your web component use this patter in a custom.js
 
 ```javascript
 document.addEventListener('DOMContentLoaded', function(event) {
-  var el = document.querySelector('#ngskills');
+  var el = document.querySelector('#ngxekills');
   el.addEventListener('onSaveSkills', data =>
     console.log('Logging Save from host', data.detail)
   );
@@ -113,7 +113,7 @@ If you want to create `ONE SINGLE FILE` you can use an older approach to concat 
 
 Install `npm install --save-dev concat fs-extra`
 
-Add elements-build.js to root folder
+Add `elements-build.js` to root folder
 
 ```javascript
 const fs = require('fs-extra');
@@ -138,3 +138,21 @@ Add to your custom build script in `package.json`:
 ```
 "elements": "ng build --prod --keep-polyfills --single-bundle  true --output-hashing none && node elements-build.js
 ```
+
+To test your Web Component:
+
+Install a tool that can serve static pages:
+
+```
+npm i -g angular-http-server
+```
+
+Replace `<app-root></app-root>` in `dist/ngSkillsCE/index.html` with `<ngxe-skills></ngxe-skills>`
+
+In `dist/ngSkillsCE/` run:
+
+```
+angular-http-server
+```
+
+Navigate to: http://localhost:8080/
