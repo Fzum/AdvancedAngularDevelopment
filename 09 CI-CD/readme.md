@@ -28,7 +28,7 @@ firebase deploy
 
 To check the WSL mode, run:
 
-```
+```****
 wsl -l -v
 ```
 
@@ -242,6 +242,31 @@ Enable Kubernetes in Docker Desktop:
 ![Kubernetes](_images/kubernetes.png)
 
 ### Getting Started
+
+Create a Deployment:
+
+```
+kubectl create deployment foodui --image arambazamba/foodui
+```
+
+Expose using a Service:
+
+```
+kubectl expose deployment foodui --type=LoadBalancer --port=8080
+```
+
+Forward the port to Service
+
+![port-forward](_images/port-forward.png)
+
+> Note: Can also be done using: `kubectl port-forward pods/foodui-5656cfd5b8-gc2m9 8060:80 -n default`
+
+Cleanup:
+
+```
+kubectl delete service foodui
+kubectl delete deployment foodui
+```
 
 ---
 
