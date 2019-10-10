@@ -237,7 +237,7 @@ try_files $uri $uri/ /index.html =404;
 Enable Kubernetes in Docker Desktop:
 
 - Go to Docker Desktop Settings
-- Check Enable Kubernetes -> Press Yes to install
+- Check Enable Kubernetes -> Press Yes to install if asked
 
 ![Kubernetes](_images/kubernetes.png)
 
