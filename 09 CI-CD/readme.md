@@ -1,8 +1,6 @@
-# Advanced Publishing & Hosting
+# Publishing
 
-## Publishing
-
-### Firebase
+## Firebase
 
 ## Deploy to Firebase
 
@@ -20,9 +18,13 @@ firebase init
 firebase deploy
 ```
 
-## Docker & Kubernetes Basics
+# Docker & Kubernetes Basics
 
-### Setup Window Subsystem for Linux - Ubuntu
+## Setup Window Subsystem for Linux - Ubuntu
+
+[Windows Subsysstem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+[Docker for WSL Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
 
 To check the WSL mode, run:
 
@@ -36,13 +38,13 @@ To upgrade to v2, run:
 wsl --set-version Ubuntu 2
 ```
 
-[Windows Subsysstem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-
 ![wsl2](_images/wsl2.png)
 
 > Note: if you have troubles running docker on wsl make sure you installed docker desktop AFTER setting wsl to 2
 
-### Docker
+---
+
+## Docker
 
 Download an Image
 
@@ -62,39 +64,17 @@ Prefexing prod keeps Intellisense in file and allows you to have more than one D
 
 `Dockerfile` or `anguarui.dockerfile`
 
----
-
-[Docker for WSL Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
-
 [Docker CLI Reference](https://docs.docker.com/engine/reference/commandline/cli/)
 
 [Docker Compose Cheatsheet](https://devhints.io/docker-compose)
-
-### Kubernetes
-
-![Kubernetes](_images/kubernetes.png)
-
-[Kubernetes Base Terms](https://docs.bytemark.co.uk/article/kubernetes-terminology-glossary/)
-
-[Kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
-
-### Google Cloud Code
-
-[Cloud Code VS Code Extension](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode)
-
-[Cloud Code Getting Started](https://cloud.google.com/code/docs/vscode/quickstart)
 
 ---
 
 ## Containerize a 3-Tier Application
 
----
-
 ![App](_images/app.png)
 
 ### Run SQL for Linux in Container
-
----
 
 `docker run -d --name sqllinux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=TiTp4SQL@dmin' microsoft/mssql-server-linux:latest`
 
@@ -106,8 +86,6 @@ Kill & Remove Containers
 docker kill CONTAINERID
 docker rm CONTAINERID
 ```
-
----
 
 ### Containerize .NET Core Web Api - Dockerfile
 
@@ -127,11 +105,7 @@ docker build --rm -f Dockerfile -t skillsapi:latest .
 docker run -d --rm -p 8080:8080 --link sqllinux:sqllinux skillsapi:latest
 ```
 
----
-
 ### Containerize Angular Frontend
-
----
 
 [NGINX](https://www.nginx.com/) is a commonly used Web Server to serve static Apps like Angular
 
@@ -152,11 +126,7 @@ Check `http://localhost:8080` for result
 
 Attach a shell to the docker container & investigate `/usr/share/nginx/html`
 
----
-
 #### Create a Production Build - app.prod.dockerfile
-
----
 
 Build skillsUI image:
 
@@ -202,7 +172,7 @@ services:
 networks:
   skills-network:
     driver: bridge
-
+```
 
 Build your Network:
 
@@ -241,12 +211,23 @@ Use on Linux / Mac Host
 Be aware that `nginx.conf` contains a route that redirects Server Side `404 errors` to Angular's `index.html` for Angular Routing to detect the route.
 
 ```
-
 location / {
 try_files $uri $uri/ /index.html =404;
 }
-
 ```
 
 ---
-```
+
+## Kubernetes
+
+![Kubernetes](_images/kubernetes.png)
+
+[Kubernetes Base Terms](https://docs.bytemark.co.uk/article/kubernetes-terminology-glossary/)
+
+[Kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+### Google Cloud Code
+
+[Cloud Code VS Code Extension](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode)
+
+[Cloud Code Getting Started](https://cloud.google.com/code/docs/vscode/quickstart)
