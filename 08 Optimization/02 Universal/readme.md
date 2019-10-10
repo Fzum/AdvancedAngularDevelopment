@@ -23,7 +23,7 @@ ng build --prod
 - Server Build:
 
 ```
-npm run ngSSR:server:production --bundleDependencies all
+npm run build:ssr
 ```
 
 Run Universal:
