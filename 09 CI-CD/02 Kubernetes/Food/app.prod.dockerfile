@@ -12,9 +12,9 @@ FROM nginx:alpine
 VOLUME /var/cache/nginx
 
 # Take from node-build
-COPY --from=node /app/dist/ngDemoApp /usr/share/nginx/html
+COPY --from=node /app/dist/FoodUI /usr/share/nginx/html
 # Take from project folder
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 
-# docker build --rm -f "app.prod.dockerfile" -t skillsui .
-# docker run -p 8080:80 skillsui
+# docker build --rm -f "app.prod.dockerfile" -t foodui .
+# docker run -p 8080:80 foodui
