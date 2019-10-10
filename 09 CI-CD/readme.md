@@ -267,11 +267,3 @@ Cleanup:
 kubectl delete service foodui
 kubectl delete deployment foodui
 ```
-
----
-
-### Google Cloud Code
-
-[Cloud Code VS Code Extension](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode)
-
-[Cloud Code Getting Started](https://cloud.google.com/code/docs/vscode/quickstart)
