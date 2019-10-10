@@ -230,11 +230,20 @@ try_files $uri $uri/ /index.html =404;
 
 ## Kubernetes
 
-![Kubernetes](_images/kubernetes.png)
-
 [Kubernetes Base Terms](https://docs.bytemark.co.uk/article/kubernetes-terminology-glossary/)
 
 [Kubectl Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+Enable Kubernetes in Docker Desktop:
+
+- Go to Docker Desktop Settings
+- Check Enable Kubernetes -> Press Yes to install
+
+![Kubernetes](_images/kubernetes.png)
+
+### Getting Started
+
+---
 
 ### Google Cloud Code
 
