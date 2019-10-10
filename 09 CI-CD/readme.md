@@ -178,9 +178,19 @@ Build your Network:
 
 `docker-compose build`
 
-Run Network
+Run Network:
 
 `docker-compose up`
+
+Publish Image:
+
+```
+docker login
+docker tag foodui arambazamba/foodui
+docker push arambazamba/foodui
+```
+
+> Note: Use your own dockerhub username :-)
 
 ---
 
